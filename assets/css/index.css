@@ -1,0 +1,21 @@
+header{
+    background-color: #fff;
+    height: 45px;
+    box-shadow: 0 8px 8px -8px rgba(0, 0, 0, .1);
+    position: relative;
+    min-width: 1080px;
+}
+
+.logo{
+    max-width: 150px;
+    max-height: 601px;
+}
+
+.mw{
+    max-width: 400px;
+}
+
+.ma{
+    margin: auto;
+    margin-top: 2%;
+}
