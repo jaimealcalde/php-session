@@ -1,3 +1,10 @@
+<?php
+require_once("./modules/sessioncontrol.php");
+
+// $alert = checkSession();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
