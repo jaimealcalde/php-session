@@ -1,8 +1,7 @@
 <?php
 require_once("./modules/sessioncontrol.php");
 
-// $alert = checkSession();
-
+$alert = checkSession();
 ?>
 
 <!DOCTYPE html>
@@ -36,16 +35,16 @@ require_once("./modules/sessioncontrol.php");
 
             <div class="form-floating">
                 <input name="email" type="email" class="form-control" id="email" placeholder="name@example.com"
-                    data-bs-toggle="tooltip" data-bs-html="true" title="assettto@simracing.club">
+                     title="assettto@simracing.club">
                 <label for="email">Email address</label>
             </div>
             <div class="form-floating">
-                <input name="pass" type="password" class="form-control" id="password" placeholder="Password"
+                <input name="password" type="password" class="form-control" id="password" placeholder="Password"
                     title="Simracing">
                 <label for="password">Password</label>
             </div>
 
-            <!-- <?= ($alert) ? "<div class='alert alert-$alert[type] role='alert'>$alert[text]</div>" : "" ?> -->
+            <?= ($alert) ? "<div class='alert alert-$alert[type] role='alert'>$alert[text]</div>" : "" ?>
 
 
             <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
@@ -58,5 +57,4 @@ require_once("./modules/sessioncontrol.php");
     </footer>
 
 </body>
-
 </html>
