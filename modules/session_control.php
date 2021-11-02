@@ -1,5 +1,5 @@
 <?php   
-    function checkSesion(){
+    function checkSession(){
         session_start();
         $urlFile = basename($_SERVER['REQUEST_URI'], '?' . $_SERVER['QUERY_STRING']);
 
@@ -30,7 +30,7 @@
 
         destroySessionCookie();
 
-        sessionDestroy();
+        session_destroy();
         header("Location:../index.php?logout=true");
     }
 
@@ -38,24 +38,24 @@
         session_start();
 
         $email = $_POST["email"];
-        $passwrd = $_POST["password"];
+        $password = $_POST["password"];
 
         if(checkUser($email, $password)){
-            // $_SESSION["email"] = $email;
-            header("Location;../second_page.php");
+            $_SESSION["email"] = $email;
+            header("Location:../second_page.php");
         }else{
             $_SESSION["loginError"] = "Wrong email or password!";
             header("Location:../index.php");
         }
     }
 
-    function CheckUser(string $email, string $password){
+    function checkUser(string $email, string $password){
         $emailDb = "jaime.alcalde.n@gmail.com";
         $passwordDb = "qwerty";
 
         $passwordDbEncript = password_hash($passwordDb, PASSWORD_DEFAULT);
 
-        if($email == emailDb && password_verify($password, $passwordDbEcript)) return true;
+        if($email === $emailDb && password_verify($password, $passwordDbEncript)) return true;
         else return false;
     }
 
@@ -71,6 +71,7 @@
                 $params["secure"],
                 $params["httponly"]
             );
+        }
     }
 
     function checkLoginError(){
@@ -92,4 +93,3 @@
     function checkLogout(){
         if (isset($_GET["logout"]) && !isset($_SESSION["email"])) return ["type" => "primary", "text" => "Logout succesful"];
     }
-}

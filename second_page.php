@@ -1,3 +1,8 @@
+<?php
+    require_once("./modules/session_control.php");
+    checkSession();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,7 +26,9 @@
     <header>
         <div>
             <img src="./assets/images/logo.png" class="logo" alt="logo">
+            <a href="./modules/logout.php" class="text-end">Logout</a>
         </div>
+        <?= $_SESSION["email"] ?>
     </header>
 
     <main>

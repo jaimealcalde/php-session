@@ -1,7 +1,7 @@
 <?php
-require_once("./modules/sessioncontrol.php");
+    require_once("./modules/session_control.php");
 
-$alert = checkSession();
+    $alert = checkSession();
 ?>
 
 <!DOCTYPE html>
@@ -30,7 +30,7 @@ $alert = checkSession();
         </div>
     </header>
     <main class="form-signin ma mw">
-        <form action="./modules/login.php" method="POST" class="text-center">
+        <form action = "./modules/login.php" method="POST" class="text-center">
             <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
             <div class="form-floating">

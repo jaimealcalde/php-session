@@ -1,3 +1,3 @@
 <?php
-require_once("./session_control.php");
-authUser();
+    require_once("./session_control.php");
+    authUser();
